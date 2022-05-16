@@ -1,13 +1,21 @@
 import React from "react";
 import { Layout } from "../components";
 import { useParams } from "react-router-dom";
+import { MovieDetails } from "../components/sections/MovieDetails/MovieDetails";
+import { useGetMovieDetails } from "../components";
 
 export const MoviePage = () => {
   const { id } = useParams();
+  const { fetching, movieDetails, error } = useGetMovieDetails();
 
   return (
     <Layout>
-      <h1>{id}</h1>
+      <MovieDetails
+        fetching={fetching}
+        movieDetails={movieDetails}
+        error={error}
+      />
+      <p>Movie id: {id}</p>
     </Layout>
   );
 };

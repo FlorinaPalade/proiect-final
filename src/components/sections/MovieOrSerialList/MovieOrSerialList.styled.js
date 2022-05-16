@@ -23,6 +23,17 @@ export const Title = styled.h1`
 
 export const MoviesWrapper = styled.div`
   display: flex;
+  &::-webkit-scrollbar {
+    width: 2rem;
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px gray;
+    border-radius: 1rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #cdfff9;
+    border-radius: 1rem;
+  }
 `;
 
 export const Loader = styled.div`
@@ -38,7 +49,7 @@ export const Loader = styled.div`
 export const MovieCard = styled.div`
   display: flex;
   padding: 1rem;
-  min-height: 25rem;
+  min-height: 21rem;
   min-width: 15rem;
 `;
 

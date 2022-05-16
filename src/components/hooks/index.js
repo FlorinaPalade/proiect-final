@@ -1,0 +1,1 @@
+export { useGetMovieDetails } from "./useGetMovieDetails";
