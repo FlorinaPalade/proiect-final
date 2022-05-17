@@ -23,6 +23,7 @@ export const Title = styled.h1`
 
 export const MoviesWrapper = styled.div`
   display: flex;
+  overflow-y: hidden;
   &::-webkit-scrollbar {
     width: 2rem;
   }
@@ -51,6 +52,14 @@ export const MovieCard = styled.div`
   padding: 1rem;
   min-height: 21rem;
   min-width: 15rem;
+  align-items: center;
+
+  position: relative;
+  transition: transform 0.3s;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
 `;
 
 export const Poster = styled.img`
@@ -58,5 +67,4 @@ export const Poster = styled.img`
   border-radius: 5%;
   display: block;
   margin: 0 auto 1rem;
-  cursor: pointer;
 `;

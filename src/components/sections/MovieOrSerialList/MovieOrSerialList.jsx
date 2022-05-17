@@ -17,15 +17,21 @@ export function MovieList({ isPopMovie, isPopTVShow, props }) {
 
   async function getList() {
     if (isPopMovie) {
-      const response = await fetch(`${BASE_URL}/MostPopularMovies/k_j2lrw34m`);
+      //const response = await fetch(`${BASE_URL}/MostPopularMovies/k_j2lrw34m`);
+      //const response = await fetch(`${BASE_URL}/MostPopularMovies/k_bbg0xhbj`);
+      const response = await fetch(`${BASE_URL}/MostPopularMovies/k_3715o53v`);
       const data = await response.json();
       setList(data.items);
     } else if (isPopTVShow) {
-      const response = await fetch(`${BASE_URL}/MostPopularTVs/k_j2lrw34m`);
+      //const response = await fetch(`${BASE_URL}/MostPopularTVs/k_j2lrw34m`);
+      //const response = await fetch(`${BASE_URL}/MostPopularTVs/k_bbg0xhbj`);
+      const response = await fetch(`${BASE_URL}/MostPopularTVs/k_3715o53v`);
       const data = await response.json();
       setList(data.items);
     } else {
-      const response = await fetch(`${BASE_URL}/ComingSoon/k_j2lrw34m`);
+      //const response = await fetch(`${BASE_URL}/ComingSoon/k_j2lrw34m`);
+      //const response = await fetch(`${BASE_URL}/ComingSoon/k_bbg0xhbj`);
+      const response = await fetch(`${BASE_URL}/ComingSoon/k_3715o53v`);
       const data = await response.json();
       setList(data.items);
     }

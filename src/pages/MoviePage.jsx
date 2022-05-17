@@ -5,6 +5,7 @@ import { MovieDetails } from "../components/sections/MovieDetails/MovieDetails";
 import { useGetMovieDetails } from "../components";
 
 export const MoviePage = () => {
+  // eslint-disable-next-line
   const { id } = useParams();
   const { fetching, movieDetails, error } = useGetMovieDetails();
 
@@ -15,7 +16,6 @@ export const MoviePage = () => {
         movieDetails={movieDetails}
         error={error}
       />
-      <p>Movie id: {id}</p>
     </Layout>
   );
 };

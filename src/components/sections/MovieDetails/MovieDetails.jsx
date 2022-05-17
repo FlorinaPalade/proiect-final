@@ -7,28 +7,37 @@ import {
   Error,
   Details,
   Video,
+  Poster,
+  Moreinfo,
+  Rating,
+  Plot,
+  VideoContainer,
 } from "./MovieDetails.styled";
 
 export function MovieDetails({ fetching, movieDetails, error }) {
   return (
     <Background>
       <Container>
-        <div>
-          {fetching && <Loader>Loading details....</Loader>}
-          {error && <Error>Error message: {error}</Error>}
-          {!fetching && !error && (
-            <Details>
-              <Title>{movieDetails.title}</Title>
-              <Video src={movieDetails.trailer.linkEmbed}></Video>
-              <div>id:{movieDetails.id}</div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </Details>
-          )}
-        </div>
+        {fetching && <Loader>Loading details....</Loader>}
+        {error && <Error>Error message: {error}</Error>}
+        {!fetching && !error && (
+          <Details>
+            <Title>{movieDetails.fullTitle}</Title>
+            <VideoContainer>
+              <Video
+                src={movieDetails.trailer.linkEmbed}
+                frameborder="0"
+                allowFullScreen
+                scrolling="no"
+              ></Video>
+            </VideoContainer>
+            <Moreinfo>
+              <Poster src={movieDetails.image} alt="poster" />
+              <Plot>{movieDetails.wikipedia.plotShort.plainText}</Plot>
+              <Rating>IMDB Rating: {movieDetails.ratings.imDb}</Rating>
+            </Moreinfo>
+          </Details>
+        )}
       </Container>
     </Background>
   );

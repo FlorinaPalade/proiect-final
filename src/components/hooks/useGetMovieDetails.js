@@ -11,7 +11,9 @@ export function useGetMovieDetails() {
   async function getMovieDetails() {
     try {
       const { data, status, statusText } = await axios.get(
-        `https://imdb-api.com/en/API/Title/k_j2lrw34m/${id}/FullActor,FullCast,Posters,Trailer,Ratings,Wikipedia,`
+        // `https://imdb-api.com/en/API/Title/k_j2lrw34m/${id}/FullActor,FullCast,Posters,Trailer,Ratings,Wikipedia,`
+        // `https://imdb-api.com/en/API/Title/k_bbg0xhbj/${id}/FullActor,FullCast,Posters,Trailer,Ratings,Wikipedia,`
+        `https://imdb-api.com/en/API/Title/k_3715o53v/${id}/FullActor,FullCast,Posters,Trailer,Ratings,Wikipedia,`
       );
       if (status === 200) {
         if (data.errorMessage === "") {
